@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/AnalyzeStarter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/AnalyzeStarter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Foreach/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Foreach/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PaintTreeMap/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PaintTreeMap/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Resizer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Resizer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/VirtualScreen/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/VirtualScreen/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tree-agg/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tree-agg/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
