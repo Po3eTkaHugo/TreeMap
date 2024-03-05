@@ -1,7 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
-import java.io.IOException;
 import javax.swing.*;
 
 public class SimpleGUI extends JFrame {
@@ -25,23 +23,10 @@ public class SimpleGUI extends JFrame {
         container.add(button);
 
     }
-    //path = "D:/VISTAR/TreeSizeCount";
 
     class ButtonEventListener implements ActionListener{
-        public void actionPerformed (ActionEvent e){
-            try {
-                ForeachTree scan = new ForeachTree();
-                File parent = new File(input.getText());
-
-                JTextArea textArea = new JTextArea(scan.makeForeachTree(parent, ""));
-                JScrollPane scrollPane = new JScrollPane(textArea);
-                textArea.setLineWrap(true);
-                textArea.setWrapStyleWord(true);
-                scrollPane.setPreferredSize( new Dimension( 500, 500 ) );
-                JOptionPane.showMessageDialog(null, scrollPane, "TreeMap", JOptionPane.PLAIN_MESSAGE);
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
+        public void actionPerformed (ActionEvent e) {
+            PrintTree.print(input.getText()); //path = "D:/VISTAR/TreeSizeCount";
         }
     }
 }

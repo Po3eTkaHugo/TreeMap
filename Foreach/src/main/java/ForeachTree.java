@@ -10,7 +10,7 @@ public class ForeachTree {
             return "";
         }
 
-        String ans = PrintTree.print(indent, src.getName(), NiceResize.resize(getFolderSize(src.toPath().toString())));
+        String ans = indent + src.getName() + ':' + NiceResize.resize(getFolderSize(src.toPath().toString())) + "\n";
         if (src.isDirectory()) {
             indent += "──";
             for (File sub : src.listFiles()) {
