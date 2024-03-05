@@ -3,7 +3,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException  {
-        ForeachTree scan = new ForeachTree();
+        VirtualScreen scan = new VirtualScreen();
         String path = "D:/VISTAR/TreeSizeCount";
         File parent = new File(path);
 
