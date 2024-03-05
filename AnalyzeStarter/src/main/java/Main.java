@@ -3,10 +3,11 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException  {
-        VirtualScreen scan = new VirtualScreen();
+        SimpleGUI app = new SimpleGUI();
+        app.setVisible(true);
         String path = "D:/VISTAR/TreeSizeCount";
         File parent = new File(path);
 
-        scan.makeForeachTree(parent, "");
+       // app.makeForeachTree(parent, "");
     }
 }
