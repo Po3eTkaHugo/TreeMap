@@ -7,7 +7,6 @@ public class Main {
         String path = "D:/VISTAR/TreeSizeCount";
         File parent = new File(path);
 
-        scan.printName(parent);
-
+        scan.makeForeachTree(parent, "");
     }
 }

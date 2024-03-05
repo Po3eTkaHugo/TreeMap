@@ -3,17 +3,34 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DecimalFormat;
+
+import static java.lang.Math.round;
 
 public class ForeachTree {
-    public void printName(File src) throws IOException{
+    public void makeForeachTree(File src, String indent) throws IOException{
         if (null == src || !src.exists()) {
             return ;
         }
 
-        System.out.println(src.getAbsolutePath() + ": " + getFolderSize(src.toPath().toString()));
+        double size = getFolderSize(src.toPath().toString());
+        String shortSize = " " + size + " B";
+        DecimalFormat dSize = new DecimalFormat("0.#");
+        if (size / 1024 >= 1) {
+            size /= 1024;
+            shortSize = " " + dSize.format(size) + " KB";
+        }
+        if (size / 1024 >= 1) {
+            size /= 1024;
+            shortSize = " " + dSize.format(size) + " MB";
+        }
+
+
+        System.out.println(indent + src.getName() + ':' + shortSize);
         if (src.isDirectory()) {
+            indent += "──";
             for (File sub : src.listFiles()) {
-                printName(sub);
+                makeForeachTree(sub, indent);
             }
         }
     }
