@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.DecimalFormat;
 
 public class ForeachTree {
     public String makeForeachTree(File src, String indent) throws IOException{
@@ -11,19 +10,7 @@ public class ForeachTree {
             return "";
         }
 
-        double size = getFolderSize(src.toPath().toString());
-        String shortSize = " " + size + " B";
-        DecimalFormat dSize = new DecimalFormat("0.#");
-        if (size / 1024 >= 1) {
-            size /= 1024;
-            shortSize = " " + dSize.format(size) + " KB";
-        }
-        if (size / 1024 >= 1) {
-            size /= 1024;
-            shortSize = " " + dSize.format(size) + " MB";
-        }
-
-        String ans = indent + src.getName() + ':' + shortSize + "\n";
+        String ans = PrintTree.print(indent, src.getName(), NiceResize.resize(getFolderSize(src.toPath().toString())));
         if (src.isDirectory()) {
             indent += "──";
             for (File sub : src.listFiles()) {

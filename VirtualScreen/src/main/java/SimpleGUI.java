@@ -25,7 +25,6 @@ public class SimpleGUI extends JFrame {
         container.add(button);
 
     }
-
     //path = "D:/VISTAR/TreeSizeCount";
 
     class ButtonEventListener implements ActionListener{
