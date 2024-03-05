@@ -5,12 +5,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
 
-import static java.lang.Math.round;
-
 public class ForeachTree {
-    public void makeForeachTree(File src, String indent) throws IOException{
+    public String makeForeachTree(File src, String indent) throws IOException{
         if (null == src || !src.exists()) {
-            return ;
+            return "";
         }
 
         double size = getFolderSize(src.toPath().toString());
@@ -25,14 +23,14 @@ public class ForeachTree {
             shortSize = " " + dSize.format(size) + " MB";
         }
 
-
-        System.out.println(indent + src.getName() + ':' + shortSize);
+        String ans = indent + src.getName() + ':' + shortSize + "\n";
         if (src.isDirectory()) {
             indent += "──";
             for (File sub : src.listFiles()) {
-                makeForeachTree(sub, indent);
+                ans += makeForeachTree(sub, indent);
             }
         }
+        return ans;
     }
 
     public long getFolderSize(String path) throws IOException {
