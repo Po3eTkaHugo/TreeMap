@@ -37,8 +37,6 @@ public class SimpleGUI extends JFrame {
             JPanel jPanel = new JPanel();
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-
-            fileChooser.showOpenDialog(jPanel);
             fileChooser.setDialogTitle("Select your folder");
             fileChooser.setAcceptAllFileFilterUsed(false);
 
