@@ -1,12 +1,13 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Arrays;
 import javax.swing.*;
 
 public class SimpleGUI extends JFrame {
     private JButton button = new JButton("Calculate");
+    private JButton buttonFileDialog = new JButton("Open explorer");
     private JTextField input = new JTextField("", 55);
-    private JLabel label = new JLabel("Input your path");
-    private JLabel text = new JLabel("");
+    private JLabel label = new JLabel("Your current path");
 
     public SimpleGUI() {
         super("Simple Calculator");
@@ -14,19 +15,26 @@ public class SimpleGUI extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container container = this.getContentPane();
-        container.setLayout(new GridLayout(3,2,2,2));
+        container.setLayout(new GridLayout(3,3,2,2));
         container.add(label);
         container.add(input);
-        container.add(text);
 
-        button.addActionListener(new ButtonEventListener());
+        button.addActionListener(new ButtonEventListenerButton());
+        buttonFileDialog.addActionListener(new ButtonEventListenerButtonFileDialog());
         container.add(button);
+        container.add(buttonFileDialog);
 
     }
 
-    class ButtonEventListener implements ActionListener{
+    class ButtonEventListenerButton implements ActionListener{
         public void actionPerformed (ActionEvent e) {
             PrintTree.print(input.getText()); //path = "D:/VISTAR/TreeSizeCount";
+        }
+    }
+
+    class ButtonEventListenerButtonFileDialog implements ActionListener{
+        public void actionPerformed (ActionEvent e) {
+            input.setText(PrintTree.showDialog());
         }
     }
 }
