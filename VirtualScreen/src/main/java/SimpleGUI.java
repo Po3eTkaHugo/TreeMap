@@ -32,21 +32,9 @@ public class SimpleGUI extends JFrame {
         }
     }
 
-    class ButtonEventListenerButtonFileDialog extends Component implements ActionListener{
+    class ButtonEventListenerButtonFileDialog implements ActionListener{
         public void actionPerformed (ActionEvent e) {
-            JPanel jPanel = new JPanel();
-            JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            fileChooser.setDialogTitle("Select your folder");
-            fileChooser.setAcceptAllFileFilterUsed(false);
-
-            if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-                input.setText(String.valueOf(((fileChooser.getSelectedFile()))));
-            }
-            else {
-                System.out.println("No Selection ");
-            }
-
+            input.setText(PrintTree.showDialog());
         }
     }
 }
