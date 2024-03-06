@@ -25,6 +25,10 @@
         </dependency>
     </dependencies>
 
+    <scm>
+        <tag>AnalyzeStarter-1.0</tag>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
@@ -52,4 +56,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

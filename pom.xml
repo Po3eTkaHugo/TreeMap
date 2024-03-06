@@ -21,7 +21,7 @@
     </properties>
 
     <scm>
-        <developerConnection>scm:git:https://github.com/Po3eTkaHugo/TreeMap.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/Po3eTkaHugo/TreeMap</developerConnection>
     </scm>
 
     <build>
