@@ -28,7 +28,6 @@ public class PrintTree extends Component {
         fileChooser.setAcceptAllFileFilterUsed(false);
 
         if (fileChooser.showOpenDialog(jPanel) == JFileChooser.APPROVE_OPTION) {
-            //input.setText(String.valueOf(((fileChooser.getSelectedFile()))));
             return String.valueOf(((fileChooser.getSelectedFile())));
         }
         else {
